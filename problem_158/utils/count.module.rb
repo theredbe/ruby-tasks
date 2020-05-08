@@ -2,8 +2,8 @@ module Count
   require_relative 'choose.module'
   include Choose
 
-  def count(n, alphabet)
-    return 0 if (n > alphabet)
+  def count(n, alphabet_size)
+    return 0 if (n > alphabet_size)
 
     result = 0
 
@@ -11,6 +11,6 @@ module Count
       result += choose(n, i) - 1
     end
 
-    return result * choose(alphabet, n)
+    return result * choose(alphabet_size, n)
   end
 end
